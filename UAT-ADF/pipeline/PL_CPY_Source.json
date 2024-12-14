@@ -58,9 +58,166 @@
 							"userProperties": [],
 							"typeProperties": {
 								"expression": {
-									"value": "@equals(last(split(item(), '.')), 'csv')",
+									"value": "@equals(last(split(item().File_name_source, '.')), 'csv')",
 									"type": "Expression"
-								}
+								},
+								"ifFalseActivities": [
+									{
+										"name": "Copy data_Zip",
+										"type": "Copy",
+										"dependsOn": [],
+										"policy": {
+											"timeout": "0.12:00:00",
+											"retry": 0,
+											"retryIntervalInSeconds": 30,
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"typeProperties": {
+											"source": {
+												"type": "BinarySource",
+												"storeSettings": {
+													"type": "AzureBlobFSReadSettings",
+													"recursive": true
+												},
+												"formatSettings": {
+													"type": "BinaryReadSettings",
+													"compressionProperties": {
+														"type": "ZipDeflateReadSettings"
+													}
+												}
+											},
+											"sink": {
+												"type": "BinarySink",
+												"storeSettings": {
+													"type": "AzureBlobFSWriteSettings"
+												}
+											},
+											"enableStaging": false
+										},
+										"inputs": [
+											{
+												"referenceName": "Binary_Source",
+												"type": "DatasetReference",
+												"parameters": {
+													"container_source": {
+														"value": "item().container_source",
+														"type": "Expression"
+													},
+													"directory_source": {
+														"value": "item().directory_source",
+														"type": "Expression"
+													},
+													"File_name_source": {
+														"value": "item().File_name_source",
+														"type": "Expression"
+													}
+												}
+											}
+										],
+										"outputs": [
+											{
+												"referenceName": "Binary_Sink",
+												"type": "DatasetReference",
+												"parameters": {
+													"container_sink": {
+														"value": "item().container_sink",
+														"type": "Expression"
+													},
+													"File_name_sink": {
+														"value": "item().File_name_sink",
+														"type": "Expression"
+													}
+												}
+											}
+										]
+									}
+								],
+								"ifTrueActivities": [
+									{
+										"name": "Copy data_CSV",
+										"type": "Copy",
+										"dependsOn": [],
+										"policy": {
+											"timeout": "0.12:00:00",
+											"retry": 0,
+											"retryIntervalInSeconds": 30,
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"typeProperties": {
+											"source": {
+												"type": "DelimitedTextSource",
+												"storeSettings": {
+													"type": "AzureBlobFSReadSettings",
+													"recursive": true,
+													"enablePartitionDiscovery": false
+												},
+												"formatSettings": {
+													"type": "DelimitedTextReadSettings"
+												}
+											},
+											"sink": {
+												"type": "DelimitedTextSink",
+												"storeSettings": {
+													"type": "AzureBlobFSWriteSettings"
+												},
+												"formatSettings": {
+													"type": "DelimitedTextWriteSettings",
+													"quoteAllText": true,
+													"fileExtension": ".txt"
+												}
+											},
+											"enableStaging": false,
+											"translator": {
+												"type": "TabularTranslator",
+												"typeConversion": true,
+												"typeConversionSettings": {
+													"allowDataTruncation": true,
+													"treatBooleanAsNumber": false
+												}
+											}
+										},
+										"inputs": [
+											{
+												"referenceName": "Dataset_CSV_Source",
+												"type": "DatasetReference",
+												"parameters": {
+													"container_source": {
+														"value": "item().container_source",
+														"type": "Expression"
+													},
+													"directory_source": {
+														"value": "item().directory_source",
+														"type": "Expression"
+													},
+													"File_name_source": {
+														"value": "item().File_name_source",
+														"type": "Expression"
+													}
+												}
+											}
+										],
+										"outputs": [
+											{
+												"referenceName": "Dataset_CSV_Sink",
+												"type": "DatasetReference",
+												"parameters": {
+													"File_name_sink": {
+														"value": "item().container_sink",
+														"type": "Expression"
+													},
+													"container_sink": {
+														"value": "item().File_name_sink",
+														"type": "Expression"
+													}
+												}
+											}
+										]
+									}
+								]
 							}
 						}
 					]
