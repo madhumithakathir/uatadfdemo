@@ -1,0 +1,9 @@
+{
+	"name": "uatappadf",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "dded90ce-c0d5-4e71-8476-5d5b43efb730",
+		"tenantId": "492f0511-f2cc-4b1a-8d47-9b4b56ed6bec"
+	}
+}
