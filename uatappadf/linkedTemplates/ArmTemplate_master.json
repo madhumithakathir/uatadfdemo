@@ -21,7 +21,7 @@
 		},
 		"AzureDataLakeStorage_Sink_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://uatadlssource.dfs.core.windows.net"
+			"defaultValue": "https://uatadlsraw.dfs.core.windows.net"
 		},
 		"AzureDataLakeStorage_Sink_properties_typeProperties_tenant": {
 			"type": "string",
