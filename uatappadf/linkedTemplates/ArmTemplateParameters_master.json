@@ -1,0 +1,45 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "uatappadf"
+		},
+		"AzureDataLakeStorage_JSON_properties_typeProperties_url": {
+			"value": "https://uatadlssource.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorage_JSON_properties_typeProperties_tenant": {
+			"value": "492f0511-f2cc-4b1a-8d47-9b4b56ed6bec"
+		},
+		"AzureDataLakeStorage_JSON_properties_typeProperties_servicePrincipalId": {
+			"value": "4d8e5375-0cf7-4f92-8799-d7d8472708a4"
+		},
+		"AzureDataLakeStorage_Sink_properties_typeProperties_url": {
+			"value": "https://uatadlssource.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorage_Sink_properties_typeProperties_tenant": {
+			"value": "492f0511-f2cc-4b1a-8d47-9b4b56ed6bec"
+		},
+		"AzureDataLakeStorage_Sink_properties_typeProperties_servicePrincipalId": {
+			"value": "4d8e5375-0cf7-4f92-8799-d7d8472708a4"
+		},
+		"AzureDataLakeStorage_Source_properties_typeProperties_url": {
+			"value": "https://uatadlssource.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorage_Source_properties_typeProperties_tenant": {
+			"value": "492f0511-f2cc-4b1a-8d47-9b4b56ed6bec"
+		},
+		"AzureDataLakeStorage_Source_properties_typeProperties_servicePrincipalId": {
+			"value": "4d8e5375-0cf7-4f92-8799-d7d8472708a4"
+		},
+		"AzureKeyVault_properties_typeProperties_baseUrl": {
+			"value": "https://uatappkeyvault.vault.azure.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
