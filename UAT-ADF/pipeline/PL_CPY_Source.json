@@ -58,7 +58,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"expression": {
-									"value": "@equals(last(split(item().File_name_source, '.')), 'csv')",
+									"value": "@equals(split(item().File_name_source, '.')[1], 'csv')",
 									"type": "Expression"
 								},
 								"ifFalseActivities": [
@@ -102,15 +102,15 @@
 												"type": "DatasetReference",
 												"parameters": {
 													"container_source": {
-														"value": "item().container_source",
+														"value": "@item().container_source",
 														"type": "Expression"
 													},
 													"directory_source": {
-														"value": "item().directory_source",
+														"value": "@item().directory_source",
 														"type": "Expression"
 													},
 													"File_name_source": {
-														"value": "item().File_name_source",
+														"value": "@item().File_name_source",
 														"type": "Expression"
 													}
 												}
@@ -122,11 +122,11 @@
 												"type": "DatasetReference",
 												"parameters": {
 													"container_sink": {
-														"value": "item().container_sink",
+														"value": "@item().container_sink",
 														"type": "Expression"
 													},
 													"File_name_sink": {
-														"value": "item().File_name_sink",
+														"value": "@item().File_name_sink",
 														"type": "Expression"
 													}
 												}
@@ -186,15 +186,15 @@
 												"type": "DatasetReference",
 												"parameters": {
 													"container_source": {
-														"value": "item().container_source",
+														"value": "@item().container_source",
 														"type": "Expression"
 													},
 													"directory_source": {
-														"value": "item().directory_source",
+														"value": "@item().directory_source",
 														"type": "Expression"
 													},
 													"File_name_source": {
-														"value": "item().File_name_source",
+														"value": "@item().File_name_source",
 														"type": "Expression"
 													}
 												}
@@ -206,11 +206,11 @@
 												"type": "DatasetReference",
 												"parameters": {
 													"File_name_sink": {
-														"value": "item().container_sink",
+														"value": "@item().File_name_sink",
 														"type": "Expression"
 													},
 													"container_sink": {
-														"value": "item().File_name_sink",
+														"value": "@item().container_sink",
 														"type": "Expression"
 													}
 												}
