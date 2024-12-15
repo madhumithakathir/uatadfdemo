@@ -1,0 +1,21 @@
+{
+	"name": "AzureDataLakeStorage_Jsonsink",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://uatadlsraw.dfs.core.windows.net",
+			"tenant": "492f0511-f2cc-4b1a-8d47-9b4b56ed6bec",
+			"servicePrincipalId": "4d8e5375-0cf7-4f92-8799-d7d8472708a4",
+			"servicePrincipalCredentialType": "ServicePrincipalKey",
+			"servicePrincipalCredential": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "SPsecret"
+			}
+		}
+	}
+}
