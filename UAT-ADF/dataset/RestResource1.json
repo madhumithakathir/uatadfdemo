@@ -1,0 +1,23 @@
+{
+	"name": "RestResource1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RestService",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"url": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"typeProperties": {
+			"relativeUrl": {
+				"value": "@dataset().url",
+				"type": "Expression"
+			}
+		},
+		"schema": []
+	}
+}

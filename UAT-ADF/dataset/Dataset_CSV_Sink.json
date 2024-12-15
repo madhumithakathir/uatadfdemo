@@ -11,6 +11,9 @@
 			},
 			"container_sink": {
 				"type": "string"
+			},
+			"directory_sink": {
+				"type": "string"
 			}
 		},
 		"annotations": [],
@@ -20,6 +23,10 @@
 				"type": "AzureBlobFSLocation",
 				"fileName": {
 					"value": "@dataset().File_name_sink",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().directory_sink",
 					"type": "Expression"
 				},
 				"fileSystem": {

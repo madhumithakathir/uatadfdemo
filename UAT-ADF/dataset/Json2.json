@@ -1,8 +1,8 @@
 {
-	"name": "Json1",
+	"name": "Json2",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureDataLakeStorage_JSON",
+			"referenceName": "AzureDataLakeStorage_Jsonsink",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
@@ -28,28 +28,6 @@
 				}
 			}
 		},
-		"schema": {
-			"type": "object",
-			"properties": {
-				"File_name_source": {
-					"type": "string"
-				},
-				"container_source": {
-					"type": "string"
-				},
-				"directory_source": {
-					"type": "string"
-				},
-				"File_name_sink": {
-					"type": "string"
-				},
-				"container_sink": {
-					"type": "string"
-				},
-				"directory_sink": {
-					"type": "string"
-				}
-			}
-		}
+		"schema": {}
 	}
 }

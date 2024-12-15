@@ -28,7 +28,11 @@
 					},
 					"dataset": {
 						"referenceName": "Json1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"container_name": "manual-files",
+							"file_name": "Table_Source_Datalake.json"
+						}
 					},
 					"firstRowOnly": false
 				}
@@ -84,7 +88,8 @@
 												"formatSettings": {
 													"type": "BinaryReadSettings",
 													"compressionProperties": {
-														"type": "ZipDeflateReadSettings"
+														"type": "ZipDeflateReadSettings",
+														"preserveZipFileNameAsFolder": false
 													}
 												}
 											},
@@ -127,6 +132,10 @@
 													},
 													"File_name_sink": {
 														"value": "@item().File_name_sink",
+														"type": "Expression"
+													},
+													"directory_sink": {
+														"value": "@concat(split(item().File_name_sink,'.')[0],'/Date_Part=',formatDateTime(utcnow(),'yyyy-MM-dd'))",
 														"type": "Expression"
 													}
 												}
@@ -212,7 +221,8 @@
 													"container_sink": {
 														"value": "@item().container_sink",
 														"type": "Expression"
-													}
+													},
+													"directory_sink": "@concat(split(item().File_name_sink,'.')[0],'/Date_Part=',formatDateTime(utcnow(),'yyyy-MM-dd'))"
 												}
 											}
 										]
