@@ -47,6 +47,34 @@
 			"type": "string",
 			"defaultValue": "https://uatappkeyvault.vault.azure.net/"
 		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "uatserver789.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "uatdatabase"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "madhu"
+		},
+		"RestService_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://airlabs.co/api/v9/airlines"
+		},
+		"AzureDataLakeStorage_Jsonsink_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://uatadlsraw.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorage_Jsonsink_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "492f0511-f2cc-4b1a-8d47-9b4b56ed6bec"
+		},
+		"AzureDataLakeStorage_Jsonsink_properties_typeProperties_servicePrincipalId": {
+			"type": "string",
+			"defaultValue": "4d8e5375-0cf7-4f92-8799-d7d8472708a4"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -77,6 +105,9 @@
 					"AzureKeyVault_properties_typeProperties_baseUrl": {
 						"value": "[parameters('AzureKeyVault_properties_typeProperties_baseUrl')]"
 					},
+					"RestService_properties_typeProperties_url": {
+						"value": "[parameters('RestService_properties_typeProperties_url')]"
+					},
 					"AzureDataLakeStorage_JSON_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage_JSON_properties_typeProperties_url')]"
 					},
@@ -103,6 +134,24 @@
 					},
 					"AzureDataLakeStorage_Source_properties_typeProperties_servicePrincipalId": {
 						"value": "[parameters('AzureDataLakeStorage_Source_properties_typeProperties_servicePrincipalId')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_userName')]"
+					},
+					"AzureDataLakeStorage_Jsonsink_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage_Jsonsink_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage_Jsonsink_properties_typeProperties_tenant": {
+						"value": "[parameters('AzureDataLakeStorage_Jsonsink_properties_typeProperties_tenant')]"
+					},
+					"AzureDataLakeStorage_Jsonsink_properties_typeProperties_servicePrincipalId": {
+						"value": "[parameters('AzureDataLakeStorage_Jsonsink_properties_typeProperties_servicePrincipalId')]"
 					}
 				}
 			},

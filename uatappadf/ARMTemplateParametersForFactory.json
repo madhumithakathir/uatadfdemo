@@ -34,6 +34,27 @@
 		},
 		"AzureKeyVault_properties_typeProperties_baseUrl": {
 			"value": "https://uatappkeyvault.vault.azure.net/"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "uatserver789.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "uatdatabase"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "madhu"
+		},
+		"RestService_properties_typeProperties_url": {
+			"value": "https://airlabs.co/api/v9/airlines"
+		},
+		"AzureDataLakeStorage_Jsonsink_properties_typeProperties_url": {
+			"value": "https://uatadlsraw.dfs.core.windows.net"
+		},
+		"AzureDataLakeStorage_Jsonsink_properties_typeProperties_tenant": {
+			"value": "492f0511-f2cc-4b1a-8d47-9b4b56ed6bec"
+		},
+		"AzureDataLakeStorage_Jsonsink_properties_typeProperties_servicePrincipalId": {
+			"value": "4d8e5375-0cf7-4f92-8799-d7d8472708a4"
 		}
 	}
 }
