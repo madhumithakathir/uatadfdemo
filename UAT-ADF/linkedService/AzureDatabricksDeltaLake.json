@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "AzureDatabricksDeltaLake",
 		"typeProperties": {
-			"domain": "https://adb-3975353843079978.18.azuredatabricks.net/",
+			"domain": "https://adb-3975353843079978.18.azuredatabricks.net",
 			"clusterId": "1217-084309-5lscaa1l",
 			"accessToken": {
 				"type": "AzureKeyVaultSecret",
